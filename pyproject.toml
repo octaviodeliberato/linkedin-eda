@@ -20,6 +20,7 @@ contractions = "^0.1.73"
 inflect = "^6.0.2"
 stopwords = "^1.0.0"
 linkedin-api = "~=2.0.0a"
+python-dotenv = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6.22.0"
