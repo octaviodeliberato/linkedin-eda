@@ -19,6 +19,7 @@ spacy-langdetect = "^0.1.2"
 contractions = "^0.1.73"
 inflect = "^6.0.2"
 stopwords = "^1.0.0"
+linkedin-api = "~=2.0.0a"
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6.22.0"
