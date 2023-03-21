@@ -15,6 +15,10 @@ wordcloud = "^1.8.2"
 matplotlib = "^3.7.1"
 nltk = "^3.8.1"
 nbformat = ">=4.2.0"
+spacy-langdetect = "^0.1.2"
+contractions = "^0.1.73"
+inflect = "^6.0.2"
+stopwords = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6.22.0"
