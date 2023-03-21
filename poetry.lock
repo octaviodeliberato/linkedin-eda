@@ -21,6 +21,22 @@ six = "*"
 test = ["astroid", "pytest"]
 
 [[package]]
+name = "attrs"
+version = "22.2.0"
+description = "Classes Without Boilerplate"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+cov = ["attrs", "coverage-enable-subprocess", "coverage[toml] (>=5.3)"]
+dev = ["attrs"]
+docs = ["furo", "sphinx", "myst-parser", "zope.interface", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier"]
+tests = ["attrs", "zope.interface"]
+tests-no-zope = ["hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist", "cloudpickle", "mypy (>=0.971,<0.990)", "pytest-mypy-plugins"]
+tests_no_zope = ["hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist", "cloudpickle", "mypy (>=0.971,<0.990)", "pytest-mypy-plugins"]
+
+[[package]]
 name = "backcall"
 version = "0.2.0"
 description = "Specifications for callback functions passed in to an API"
@@ -179,6 +195,17 @@ python-versions = "*"
 
 [package.extras]
 tests = ["asttokens", "pytest", "littleutils", "rich"]
+
+[[package]]
+name = "fastjsonschema"
+version = "2.16.3"
+description = "Fastest Python implementation of JSON schema"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+devel = ["colorama", "jsonschema", "json-spec", "pylint", "pytest", "pytest-benchmark", "pytest-cache", "validictory"]
 
 [[package]]
 name = "fonttools"
@@ -345,6 +372,22 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "jsonschema"
+version = "4.17.3"
+description = "An implementation of JSON Schema validation for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+attrs = ">=17.4.0"
+pyrsistent = ">=0.14.0,<0.17.0 || >0.17.0,<0.17.1 || >0.17.1,<0.17.2 || >0.17.2"
+
+[package.extras]
+format = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3987", "uri-template", "webcolors (>=1.11)"]
+format-nongpl = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3986-validator (>0.1.0)", "uri-template", "webcolors (>=1.11)"]
+
+[[package]]
 name = "jupyter-client"
 version = "8.1.0"
 description = "Jupyter protocol implementation and client libraries"
@@ -368,7 +411,7 @@ test = ["codecov", "coverage", "ipykernel (>=6.14)", "mypy", "paramiko", "pre-co
 name = "jupyter-core"
 version = "5.3.0"
 description = "Jupyter core package. A base package on which Jupyter projects rely."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 
@@ -447,6 +490,24 @@ description = "Cython bindings for MurmurHash"
 category = "main"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "nbformat"
+version = "5.8.0"
+description = "The Jupyter Notebook format"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+fastjsonschema = "*"
+jsonschema = ">=2.6"
+jupyter-core = "*"
+traitlets = ">=5.1"
+
+[package.extras]
+docs = ["myst-parser", "pydata-sphinx-theme", "sphinx", "sphinxcontrib-github-alt", "sphinxcontrib-spelling"]
+test = ["pep440", "pre-commit", "pytest", "testpath"]
 
 [[package]]
 name = "nest-asyncio"
@@ -580,7 +641,7 @@ tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "pa
 name = "platformdirs"
 version = "3.1.1"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -698,6 +759,14 @@ python-versions = ">=3.6.8"
 diagrams = ["railroad-diagrams", "jinja2"]
 
 [[package]]
+name = "pyrsistent"
+version = "0.19.3"
+description = "Persistent/Functional/Immutable data structures"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
@@ -720,7 +789,7 @@ python-versions = "*"
 name = "pywin32"
 version = "305"
 description = "Python for Window Extensions"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -996,7 +1065,7 @@ telegram = ["requests"]
 name = "traitlets"
 version = "5.9.0"
 description = "Traitlets Python configuration system"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -1089,11 +1158,12 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "25d2a507319bea62acd6cc6898c54732194a5422ad54eaf30fb631e14bce3b4a"
+content-hash = "2cd71e8f1b37b95cad083ab076c2fcfdc7cd0a43b4150e7f3c76f16af60f2008"
 
 [metadata.files]
 appnope = []
 asttokens = []
+attrs = []
 backcall = []
 blis = []
 catalogue = []
@@ -1110,6 +1180,7 @@ cymem = []
 debugpy = []
 decorator = []
 executing = []
+fastjsonschema = []
 fonttools = []
 idna = []
 importlib-metadata = []
@@ -1119,6 +1190,7 @@ ipython = []
 jedi = []
 jinja2 = []
 joblib = []
+jsonschema = []
 jupyter-client = []
 jupyter-core = []
 kiwisolver = []
@@ -1127,6 +1199,7 @@ markupsafe = []
 matplotlib = []
 matplotlib-inline = []
 murmurhash = []
+nbformat = []
 nest-asyncio = []
 nltk = []
 numpy = []
@@ -1148,6 +1221,7 @@ pycparser = []
 pydantic = []
 pygments = []
 pyparsing = []
+pyrsistent = []
 python-dateutil = []
 pytz = []
 pywin32 = []
