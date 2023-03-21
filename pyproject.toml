@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "linkedin-eda"
+version = "0.1.0"
+description = "EDA from LinkedIn data"
+authors = ["octaviodeliberato <octavio.deliberato@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^1.5.3"
+numpy = "^1.24.2"
+plotly = "^5.13.1"
+spacy = "^3.5.1"
+wordcloud = "^1.8.2"
+matplotlib = "^3.7.1"
+nltk = "^3.8.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
