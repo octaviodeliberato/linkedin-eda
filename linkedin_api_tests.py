@@ -1,11 +1,8 @@
 # IMPORTS --------------------------------------------------------------------
 
 import pandas as pd
-# import numpy as np
-# import plotly.express as px
 from linkedin_api import Linkedin
 from dotenv import dotenv_values
-import os
 
 # CONFIG ---------------------------------------------------------------------
 
@@ -19,6 +16,13 @@ api = Linkedin(config['USERNAME'], config['PASSWORD'])
 
 # GET a profile
 profile = api.get_profile('williammazza')
+
+import json
+# convert profile dict to json
+profile_json = json.dumps(profile)
+# write json to file
+with open('data/profile.json', 'w') as f:
+    json.dump(profile, f)
 
 # GET a profiles contact info
 contact_info = api.get_profile_contact_info('williammazza')

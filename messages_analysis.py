@@ -76,7 +76,7 @@ def make_wordcloud(word_count):
     plt.axis("off") 
     plt.tight_layout(pad = 0) 
 
-    plt.show() 
+    plt.show()
     
     return fig
 
